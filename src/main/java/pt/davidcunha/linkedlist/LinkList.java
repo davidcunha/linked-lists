@@ -11,20 +11,31 @@ public class LinkList {
 
     private Link first;
 
+    /**
+     * LinkList public constructor
+     *
+     */
     public LinkList() {
         this.first = null;
     }
 
-    public boolean isEmpty() {
-        return (first == null);
-    }
-
+    /**
+     * LinkList insert first element
+     *
+     * @param id element's id
+     * @param dd element's data
+     */
     public void insertFirst(int id, double dd) {
         Link newLink = new Link(id, dd);
         newLink.setNext(this.first); //assign next to actual first link
         this.first = newLink; //new link becomes the first link
     }
 
+    /**
+     * LinkList find an element
+     *
+     * @param id element's id
+     */
     public String find(int id) {
         Link current = this.first;
 
@@ -39,6 +50,10 @@ public class LinkList {
         return current.toString();
     }
 
+    /**
+     * LinkList delete first element
+     *
+     */
     public void deleteFirst() {
         if (isEmpty()) {
             throw new IllegalStateException("linked list is empty");
@@ -48,6 +63,11 @@ public class LinkList {
         }
     }
 
+    /**
+     * LinkList delete an element
+     *
+     * @param id element's id
+     */
     public void delete(int id) {
         Link current = this.first;
         Link previous = this.first;
@@ -63,6 +83,11 @@ public class LinkList {
         }
     }
 
+    /**
+     * LinkList display entire list
+     *
+     * @return all linked list elements
+     */
     public String displayList() {
         Link current = this.first;
         StringBuilder output = new StringBuilder();
@@ -73,5 +98,14 @@ public class LinkList {
         }
 
         return output.toString();
+    }
+
+    /**
+     * LinkList is empty?
+     *
+     * @return true or false
+     */
+    public boolean isEmpty() {
+        return (first == null);
     }
 }
