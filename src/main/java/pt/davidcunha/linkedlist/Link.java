@@ -33,4 +33,8 @@ public class Link {
     public void setNext(Link next) {
         this.next = next;
     }
+    
+    public String toString() {
+        return "{" + this.getiData() + "," + this.getdData() + "}";
+    }
 }

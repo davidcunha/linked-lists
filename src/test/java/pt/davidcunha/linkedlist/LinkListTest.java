@@ -14,9 +14,9 @@ public class LinkListTest {
         list.insertFirst(10, 10.1);
         list.insertFirst(20, 20.1);
         list.insertFirst(30, 30.1);
-        assertEquals("{30,30.1}{20,20.1}{10,10.1}", list.displayList());
-        list.deleteFirst();
-        assertEquals("{20,20.1}{10,10.1}", list.displayList());
+        list.delete(20);
+        assertEquals("{10,10.1}", list.find(10));
+        assertEquals("{30,30.1}{10,10.1}", list.displayList());
         list.deleteFirst();
         assertEquals("{10,10.1}", list.displayList());
         list.deleteFirst();
