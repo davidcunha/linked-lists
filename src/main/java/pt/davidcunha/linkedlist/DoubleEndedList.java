@@ -75,13 +75,15 @@ public class DoubleEndedList {
      * DoubleEndedList delete first element
      *
      */
-    public void deleteFirst() {
+    public Link deleteFirst() {
+        Link temp = null;
         if (isEmpty()) {
             throw new IllegalStateException("linked list is empty");
         } else {
-            Link temp = this.first; //get actual first link
+            temp = this.first; //get actual first link
             this.first = temp.getNext(); //next link becomes the first link
         }
+        return temp;
     }
 
     /**
