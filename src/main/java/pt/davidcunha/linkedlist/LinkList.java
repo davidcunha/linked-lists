@@ -93,11 +93,11 @@ public class LinkList {
         StringBuilder output = new StringBuilder();
 
         while (current != null) {
-            output.append(current.toString()); //append link information
+            output.append(current.toString()).append("->"); //append link information
             current = current.getNext(); //iterate over the linked list
         }
 
-        return output.toString();
+        return output.append("null").toString();
     }
 
     /**

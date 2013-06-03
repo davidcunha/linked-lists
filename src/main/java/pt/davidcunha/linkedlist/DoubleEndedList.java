@@ -29,11 +29,11 @@ public class DoubleEndedList {
      */
     public void insertFirst(int id, double dd) {
         Link newLink = new Link(id, dd);
-        newLink.setNext(this.first); //assign next to actual first link
-        this.first = newLink; //new link becomes the first link
-        if(isEmpty()) {
+        if (isEmpty()) {
             this.last = newLink; //first link becomes the last link
         }
+        newLink.setNext(this.first); //assign next to actual first link
+        this.first = newLink; //new link becomes the first link
     }
 
     /**
@@ -44,8 +44,8 @@ public class DoubleEndedList {
      */
     public void insertLast(int id, double dd) {
         Link newLink = new Link(id, dd);
-        if(isEmpty()) {
-           this.first = newLink; //new link becomes the first link 
+        if (isEmpty()) {
+            this.first = newLink; //new link becomes the first link 
         } else {
             this.last.setNext(newLink); //assign actual last next link to new link
         }
@@ -114,11 +114,11 @@ public class DoubleEndedList {
         StringBuilder output = new StringBuilder();
 
         while (current != null) {
-            output.append(current.toString()); //append link information
+            output.append(current.toString()).append("->"); //append link information
             current = current.getNext(); //iterate over the linked list
         }
 
-        return output.toString();
+        return output.append("null").toString();
     }
 
     /**
