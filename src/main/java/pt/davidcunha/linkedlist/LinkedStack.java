@@ -14,9 +14,8 @@ public class LinkedStack {
     /**
      * LinkedStack public constructor
      *
-     * @param size structure initialization
      */
-    public LinkedStack(int size) {
+    public LinkedStack() {
         this.stackLinkList = new LinkList();
     }
 
@@ -26,7 +25,7 @@ public class LinkedStack {
      * @param id append id type to the stack
      * @param dd append data type to the stack
      */
-    public void push(int id, int dd) {
+    public void push(int id, double dd) {
         this.stackLinkList.insertFirst(id, dd);
     }
 
