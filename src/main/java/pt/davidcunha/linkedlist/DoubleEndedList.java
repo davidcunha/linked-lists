@@ -75,7 +75,7 @@ public class DoubleEndedList {
      * DoubleEndedList delete first element
      *
      */
-    public Link deleteFirst() {
+    public String deleteFirst() {
         Link temp = null;
         if (isEmpty()) {
             throw new IllegalStateException("linked list is empty");
@@ -83,7 +83,7 @@ public class DoubleEndedList {
             temp = this.first; //get actual first link
             this.first = temp.getNext(); //next link becomes the first link
         }
-        return temp;
+        return temp.toString();
     }
 
     /**
