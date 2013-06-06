@@ -34,7 +34,7 @@ public class LinkedQueue {
      *
      * @return first element
      */
-    public String remove() {
+    public Link remove() {
         return this.queueLinkList.deleteFirst();
     }
 

@@ -47,7 +47,7 @@ public class DoubleEndedList {
         if (isEmpty()) {
             this.first = newLink; //new link becomes the first link 
         } else {
-            this.last.setNext(newLink); //assign actual last next link to new link
+            this.last.setNext(newLink); //set actual last next link to new link
         }
         this.last = newLink; //new link becomes the last link
     }
@@ -56,8 +56,10 @@ public class DoubleEndedList {
      * DoubleEndedList find an element
      *
      * @param id element's id
+     * 
+     * @return element
      */
-    public String find(int id) {
+    public Link find(int id) {
         Link current = this.first;
 
         while (current.getiData() != id) {
@@ -68,14 +70,15 @@ public class DoubleEndedList {
             }
         }
 
-        return current.toString();
+        return current;
     }
 
     /**
      * DoubleEndedList delete first element
      *
+     * @return deleted element
      */
-    public String deleteFirst() {
+    public Link deleteFirst() {
         Link temp = null;
         if (isEmpty()) {
             throw new IllegalStateException("linked list is empty");
@@ -83,7 +86,7 @@ public class DoubleEndedList {
             temp = this.first; //get actual first link
             this.first = temp.getNext(); //next link becomes the first link
         }
-        return temp.toString();
+        return temp;
     }
 
     /**

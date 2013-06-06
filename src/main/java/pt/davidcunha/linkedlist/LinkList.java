@@ -36,7 +36,7 @@ public class LinkList {
      *
      * @param id element's id
      */
-    public String find(int id) {
+    public Link find(int id) {
         Link current = this.first;
 
         while (current.getiData() != id) {
@@ -47,12 +47,13 @@ public class LinkList {
             }
         }
 
-        return current.toString();
+        return current;
     }
 
     /**
      * LinkList delete first element
      *
+     * @return deleted element
      */
     public Link deleteFirst() {
         Link temp = null;
