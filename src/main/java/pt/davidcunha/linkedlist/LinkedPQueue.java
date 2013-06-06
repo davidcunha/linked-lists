@@ -1,5 +1,5 @@
 /**
- * Linked Lists - queue using a linked list
+ * Linked Lists - priority queue using a linked list
  */
 package pt.davidcunha.linkedlist;
 
@@ -7,16 +7,16 @@ package pt.davidcunha.linkedlist;
  *
  * @author David Cunha <davidgoncalvescunha AT gmail DOT pt>
  */
-public class LinkedQueue {
+public class LinkedPQueue {
     
-  private DoubleEndedList queueLinkList;
+ private SortedList pqueueLinkList;
 
     /**
-     * LinkedQueue public constructor
+     * LinkedPQueue public constructor
      *
      */
-    public LinkedQueue() {
-        this.queueLinkList = new DoubleEndedList();
+    public LinkedPQueue() {
+        this.pqueueLinkList = new SortedList();
     }
 
     /**
@@ -26,7 +26,7 @@ public class LinkedQueue {
      * @param dd append data type to the queue
      */
     public void insert(int id, double dd) {
-        this.queueLinkList.insertLast(id, dd);
+        this.pqueueLinkList.insert(id, dd);
     }
 
     /**
@@ -35,7 +35,7 @@ public class LinkedQueue {
      * @return first element
      */
     public Link remove() {
-        return this.queueLinkList.deleteFirst();
+        return this.pqueueLinkList.delete();
     }
 
     /**
@@ -44,7 +44,7 @@ public class LinkedQueue {
      * @return elements from the queue
      */
     public String peek() {
-        return this.queueLinkList.displayList();
+        return this.pqueueLinkList.displayList();
     }
 
     /**
@@ -53,7 +53,8 @@ public class LinkedQueue {
      * @return true or false
      */
     public boolean isEmpty() {
-        return (this.queueLinkList.isEmpty());
+        return (this.pqueueLinkList.isEmpty());
     }
 }
+
 

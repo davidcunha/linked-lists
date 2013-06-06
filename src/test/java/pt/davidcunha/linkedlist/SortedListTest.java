@@ -10,16 +10,16 @@ public class SortedListTest {
     
     @Test
     public void setup() {
-        SortedList sList = new SortedList();
-        sList.insert(30, 30.1);
-        sList.insert(40, 40.1);
-        sList.insert(10, 10.1);
-        sList.insert(20, 20.1);
-        sList.insert(50, 50.1);
-        assertEquals("{10,10.1}->{20,20.1}->{30,30.1}->{40,40.1}->{50,50.1}->null", sList.displayList());
-        sList.delete();
-        sList.delete();
-        assertEquals("{30,30.1}->{40,40.1}->{50,50.1}->null", sList.displayList());
+        SortedList lSorted = new SortedList();
+        lSorted.insert(30, 30.1);
+        lSorted.insert(40, 40.1);
+        lSorted.insert(10, 10.1);
+        lSorted.insert(20, 20.1);
+        lSorted.insert(50, 50.1);
+        assertEquals("{10,10.1}->{20,20.1}->{30,30.1}->{40,40.1}->{50,50.1}->null", lSorted.displayList());
+        lSorted.delete();
+        lSorted.delete();
+        assertEquals("{30,30.1}->{40,40.1}->{50,50.1}->null", lSorted.displayList());
     }
     
 }
