@@ -7,8 +7,8 @@ import org.junit.Test;
  * Unit test for linked queue implementation
  */
 public class LinkedQueueTest {
-    
-        @Test
+
+    @Test
     public void setup() {
         LinkedQueue lQueue = new LinkedQueue();
         lQueue.insert(10, 10.1);
