@@ -28,13 +28,13 @@ public class SortedList {
     public void insert(int id, double dd) {
         Link newLink = new Link(id, dd);
         Link current = this.first;
-        Link previous = null;
+        Link previous = this.first;
 
         while (current != null && id > current.getiData()) {
             previous = current;
             current = current.getNext(); //iterate over the linked list
         }
-        if (previous == null) {
+        if (current == this.first) {
             this.first = newLink; //new link becomes the first link
         } else {
             previous.setNext(newLink); //set previous next link to new link

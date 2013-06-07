@@ -104,8 +104,12 @@ public class DoubleEndedList {
             } else {
                 previous = current;
                 current = current.getNext(); //iterate over the linked list
-                previous.setNext(current.getNext()); //set previous next link to current next link
             }
+        }
+        if (current == this.first) {
+            this.first = this.first.getNext();
+        } else {
+            previous.setNext(current.getNext()); //set previous next link to current next link
         }
     }
 
