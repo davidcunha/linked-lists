@@ -73,15 +73,87 @@ public class DoublyLinkList {
                 current = current.getNext(); //iterate over the linked list
             }
         }
-        
-        if(current == this.last) {
-            this.last = newLink;
+
+        if (current == this.last) {
+            newLink.setNext(null);
+            this.last = newLink; //new link becomes the last link
         } else {
-           newLink.setNext(current.getNext());
-           current.getNext().setPrevious(newLink);
+            newLink.setNext(current.getNext()); //set actual current's next link as the new link's next link 
+            current.getNext().setPrevious(newLink); //set new link as the previous from the current's next link
         }
-        current.setNext(newLink);
-        newLink.setPrevious(current);
+        current.setNext(newLink); //assign new link as the actual current's next link
+        newLink.setPrevious(current); //set current as the new link's previous link
+    }
+
+    /**
+     * DoublyLinkList first element
+     *
+     * @return deleted element
+     */
+    public LinkD deleteFirst() {
+        LinkD tmp = this.first;
+        if (isEmpty()) {
+            throw new IllegalStateException("linked list is empty");
+        } else {
+            if (this.first == null) {
+                this.last = null;
+            } else {
+                this.first.getNext().setPrevious(null); //set null as the previous from the first's next link 
+            }
+            this.first = this.first.getNext(); //next link becomes the first link
+        }
+        return tmp;
+    }
+
+    /**
+     * DoublyLinkList delete last element
+     *
+     * @return deleted element
+     */
+    public LinkD deleteLast() {
+        LinkD tmp = this.last;
+        if (isEmpty()) {
+            throw new IllegalStateException("linked list is empty");
+        } else {
+            if (this.first.getNext() == null) {
+                this.first = null;
+            } else {
+                this.last.getPrevious().setNext(null); //set null as the next from the last's previous link 
+            }
+            this.last = this.last.getPrevious(); //previous last link becomes the last link
+        }
+        return tmp;
+    }
+
+    /**
+     * DoublyLinkList delete element
+     *
+     * @param id element's id
+     *
+     * @return deleted element
+     */
+    public LinkD delete(int id) {
+        LinkD current = this.first;
+
+        while (current.getiData() != id) {
+            if (current.getNext() == null) {
+                throw new IllegalStateException("link doesn't exist");
+            } else {
+                current = current.getNext(); //iterate over the linked list
+            }
+        }
+
+        if (current == this.first) {
+            this.first = current.getNext(); //next link becomes the first link
+        }
+        if (current == this.last) {
+            this.last = current.getPrevious(); //previous link becomes the last link
+        } else {
+            current.getPrevious().setNext(current.getNext()); //set current's next link as the next link from the current's previous link
+            current.getNext().setPrevious(current.getPrevious()); //set current's previous link as the previous link from the current's next link
+        }
+
+        return current;
     }
 
     /**
