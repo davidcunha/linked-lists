@@ -27,7 +27,7 @@ public class LinkList {
      */
     public void insertFirst(int id, double dd) {
         Link newLink = new Link(id, dd);
-        newLink.setNext(this.first); //assign next to actual first link
+        newLink.setNext(this.first); //assign first link as the next link from the new link
         this.first = newLink; //new link becomes the first link
     }
 
@@ -56,7 +56,7 @@ public class LinkList {
      * @return deleted element
      */
     public Link deleteFirst() {
-        Link temp = null;
+        Link temp = this.first;
         if (isEmpty()) {
             throw new IllegalStateException("linked list is empty");
         } else {
@@ -84,9 +84,9 @@ public class LinkList {
             }
         }
         if (current == this.first) {
-            this.first = this.first.getNext();
+            this.first = current.getNext(); //next link becomes the first link
         } else {
-            previous.setNext(current.getNext()); //set previous next link to current next link
+            previous.setNext(current.getNext()); //set current's next link as the next link from the previous link
         }
     }
 

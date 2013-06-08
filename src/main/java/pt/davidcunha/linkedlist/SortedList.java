@@ -37,9 +37,9 @@ public class SortedList {
         if (current == this.first) {
             this.first = newLink; //new link becomes the first link
         } else {
-            previous.setNext(newLink); //set previous next link to new link
+            previous.setNext(newLink); //set new link as the next link from the previous link
         }
-        newLink.setNext(current); //assign next to actual link
+        newLink.setNext(current); //assign current as the next link from the new link
     }
 
     /**
@@ -47,7 +47,7 @@ public class SortedList {
      *
      * @return deleted element
      */
-    public Link delete() {
+    public Link deleteFirst() {
         Link temp = null;
         if (isEmpty()) {
             throw new IllegalStateException("linked list is empty");

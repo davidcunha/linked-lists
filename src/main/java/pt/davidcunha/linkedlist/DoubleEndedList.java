@@ -32,7 +32,7 @@ public class DoubleEndedList {
         if (isEmpty()) {
             this.last = newLink; //first link becomes the last link
         }
-        newLink.setNext(this.first); //assign next to actual first link
+        newLink.setNext(this.first); //assign first link as the new link's next link
         this.first = newLink; //new link becomes the first link
     }
 
@@ -107,9 +107,9 @@ public class DoubleEndedList {
             }
         }
         if (current == this.first) {
-            this.first = this.first.getNext();
+            this.first = current.getNext(); //next link becomes the first link
         } else {
-            previous.setNext(current.getNext()); //set previous next link to current next link
+            previous.setNext(current.getNext()); //set current's next link as the next link from the current's previous link
         }
     }
 

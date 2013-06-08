@@ -35,7 +35,7 @@ public class LinkedPQueue {
      * @return first element
      */
     public Link remove() {
-        return this.pqueueLinkList.delete();
+        return this.pqueueLinkList.deleteFirst();
     }
 
     /**
